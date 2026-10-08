@@ -21,4 +21,9 @@ public class Employe {
 
     @Enumerated(EnumType.STRING)
     private RoleEmploye role;
+
+    // * Employe ---> 1 Agence
+    @ManyToOne
+    @JoinColumn(name = "agence_id")
+    private Agence agence;
 }

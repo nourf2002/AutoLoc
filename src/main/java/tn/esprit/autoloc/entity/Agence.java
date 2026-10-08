@@ -3,6 +3,8 @@ package tn.esprit.autoloc.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -19,4 +21,14 @@ public class Agence {
     private String ville;
     private String adresse;
     private String telephone;
+
+    // 1 Agence ---> * Employe  (One To Many Bidirectionnelle)
+    @OneToMany(mappedBy = "agence", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    private List<Employe> employes;
+
+    // 1 Agence ---> * Vehicule  (One To Many Bidirectionnelle)
+    @OneToMany(mappedBy = "agence", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    private List<Vehicule> vehicules;
 }

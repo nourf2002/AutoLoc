@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Getter
@@ -23,4 +24,9 @@ public class Client {
     private String telephone;
     private String numPermis;
     private LocalDate dateInscription;
+
+    // 1 Client ---> * Reservation  (One To Many Bidirectionnelle)
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    private List<Reservation> reservations;
 }
