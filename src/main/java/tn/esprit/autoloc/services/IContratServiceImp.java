@@ -10,8 +10,8 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-public class IContratServiceImp implements IContratService {}
-   /* @Autowired
+public class IContratServiceImp implements IContratService {
+    @Autowired
     private ContratRepository contratRepository;
     @Override
     public Contrat ajouterContrat(Contrat contrat) {
@@ -40,4 +40,3 @@ public class IContratServiceImp implements IContratService {}
     }
 
 }
-*/
